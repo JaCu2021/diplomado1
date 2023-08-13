@@ -40,3 +40,17 @@ while True:
             print("Seleccione un número válido.")
     except ValueError:
         print("Ingrese un número válido o 'q' para finalizar.")
+
+# Mostrar los productos en el carrito y el total a pagar
+print("\nProductos en el carrito:")
+total_a_pagar = 0
+for item in carrito:
+    subtotal = item['producto']['precio'] * item['cantidad']
+    total_a_pagar += subtotal
+    print(f"{item['producto']['nombre']} - Cantidad: {item['cantidad']} - Subtotal: ${subtotal:.2f}")
+
+print(f"Total a pagar: ${total_a_pagar:.2f}")
+
+# Solicitar la aprobación del pedido al usuario
+aprobacion = input("¿Desea aprobar el pedido? (s/n): ")
+
