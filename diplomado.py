@@ -54,3 +54,15 @@ print(f"Total a pagar: ${total_a_pagar:.2f}")
 # Solicitar la aprobación del pedido al usuario
 aprobacion = input("¿Desea aprobar el pedido? (s/n): ")
 
+# Mostrar mensajes según la aprobación
+if aprobacion.lower() == 's':
+    print("\nResumen de la compra:")
+    for item in carrito:
+        print(
+            f"{item['producto']['nombre']} - Cantidad: {item['cantidad']} - Subtotal: ${item['producto']['precio'] * item['cantidad']:.2f}")
+    print(f"Total a pagar: ${total_a_pagar:.2f}")
+    print("Compra aprobada. ¡Gracias por su compra!")
+else:
+    print("Pedido cancelado. ¡Esperamos atenderle en otro momento!")
+
+# Fin del programa
